@@ -4,9 +4,31 @@
  * 01-15-2024
  * ------------------------------------------------------------------*/
  
-.page-subheading {color:purple!important; font-weight:700!important}
+a {color:#008AFF }
+a:hover {
+  border-radius: 2px;
+  color: #008AFF;
+  background-color: #CCC;
+  text-decoration: none;
+  padding: 2px
+}
 
-h1 {color:#pink !important}
+/* blog title and subtitle*/
+.post-preview a:focus,
+.post-preview a:hover {
+  text-decoration: none;
+  color: #008AFF;
+}
+
+/* blog tags*/
+.blog-tags a {color:#008AFF}
+ 
+.page-heading {color:#404040;}
+.page-subheading {color:purple; font-weight:700!important}
+.well h2{color:#404040;}
+.well {background-color:#f5f5f5}
+
+
 .container-top {
   --offset: 100px;
   --fade: 80px;
