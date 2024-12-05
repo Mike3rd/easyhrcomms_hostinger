@@ -5,13 +5,7 @@
  * ------------------------------------------------------------------*/
  
 a {color:#008AFF }
-a:hover {
-  border-radius: 2px;
-  color: #008AFF;
-  background-color: #CCC;
-  text-decoration: none;
 
-}
 
 /* blog title and subtitle*/
 .post-preview a:focus,
