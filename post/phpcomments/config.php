@@ -2,11 +2,11 @@
 // database hostname, you don't usually need to change this
 define('db_host','localhost');
 // database username
-define('db_user','root');
+define('db_user','u940803011_mturko_1');
 // database password
-define('db_pass','root');
+define('db_pass','MT@comments23');
 // database name
-define('db_name','phpcomments_advanced');
+define('db_name','u940803011_ezhrcomments');
 // database charset, change this only if utf8 is not supported by your language
 define('db_charset','utf8');
 // Approval required for comments?
