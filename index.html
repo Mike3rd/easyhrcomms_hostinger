@@ -331,7 +331,7 @@ EasyHRcomms supports content on your front page. Edit /content/_index.md to chan
 <div class="comments"></div>
 
 <script>
-const comments_page_id = 1; // This number should be unique on every page
+const comments_page_id = 2; // This number should be unique on every page
 fetch("/post/phpcomments/comments.php?page_id=" + comments_page_id).then(response => response.text()).then(data => {
 	document.querySelector(".comments").innerHTML = data;
 	document.querySelectorAll(".comments .write_comment_btn, .comments .reply_comment_btn").forEach(element => {
