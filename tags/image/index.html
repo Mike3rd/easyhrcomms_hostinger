@@ -302,7 +302,7 @@ fetch("/post/phpcomments/comments.php?page_id=" + comments_page_id).then(respons
 	document.querySelectorAll(".comments .write_comment form").forEach(element => {
 		element.onsubmit = event => {
 			event.preventDefault();
-			fetch("comments.php?page_id=" + comments_page_id, {
+			fetch("/post/phpcomments/comments.php?page_id=" + comments_page_id, {
 				method: 'POST',
 				body: new FormData(element)
 			}).then(response => response.text()).then(data => {
