@@ -15,7 +15,7 @@
       <link>https://easyhrcomms.com/post/baseurltest/</link>
       <pubDate>Mon, 02 Dec 2024 11:03:47 -0500</pubDate><author>youremail@domain.com (Some Person)</author>
       <guid>https://easyhrcomms.com/post/baseurltest/</guid>
-      <description>&lt;div class=&#34;comments&#34;&gt;&lt;/div&gt;&#xA;&#xA;&#x9;&#x9;&#x9;&lt;script src=https://easyhrcomms.com/phpcomments/comments.js&#34;&gt;&lt;/script&gt;&#xA;&#x9;&#x9;&#x9;&lt;script&gt;&#xA;&#x9;&#x9;&#x9;new Comments({&#xA;&#x9;&#x9;&#x9;&#x9;page_id: 1,&#xA;&#x9;&#x9;&#x9;&#x9;// comments_to_show: 15,&#xA;&#x9;&#x9;&#x9;&#x9;// sort_by: newest | oldest | votes,&#xA;&#x9;&#x9;&#x9;});&#xA;&#x9;&#x9;&#x9;&lt;/script&gt;</description>
+      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;.../phpcomments/comments.css&#34;&gt;   &#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&lt;div class=&#34;comments&#34;&gt;&lt;/div&gt;&#xA;&#xA;&#x9;&#x9;&#x9;&lt;script src=https://easyhrcomms.com/phpcomments/comments.js&#34;&gt;&lt;/script&gt;&#xA;&#x9;&#x9;&#x9;&lt;script&gt;&#xA;&#x9;&#x9;&#x9;new Comments({&#xA;&#x9;&#x9;&#x9;&#x9;page_id: 1,&#xA;&#x9;&#x9;&#x9;&#x9;// comments_to_show: 15,&#xA;&#x9;&#x9;&#x9;&#x9;// sort_by: newest | oldest | votes,&#xA;&#x9;&#x9;&#x9;});&#xA;&#x9;&#x9;&#x9;&lt;/script&gt;</description>
     </item>
     <item>
       <title>December</title>
