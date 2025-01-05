@@ -22,7 +22,7 @@
       <link>https://easyhrcomms.com/post/december/</link>
       <pubDate>Sun, 01 Dec 2024 15:18:29 -0500</pubDate><author>youremail@domain.com (Some Person)</author>
       <guid>https://easyhrcomms.com/post/december/</guid>
-      <description></description>
+      <description>&lt;link href=&#34;style.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34;&gt;&#xA;&#x9;&#x9;&lt;link href=&#34;comments.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34;&gt;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&lt;div class=&#34;comments&#34;&gt;&lt;/div&gt;&#xA;&#xA;&#x9;&#x9;&#x9;&lt;script src=&#34;comments.js&#34;&gt;&lt;/script&gt;&#xA;&#x9;&#x9;&#x9;&lt;script&gt;&#xA;&#x9;&#x9;&#x9;new Comments({&#xA;&#x9;&#x9;&#x9;&#x9;page_id: 2,&#xA;&#x9;&#x9;&#x9;&#x9;// comments_to_show: 15,&#xA;&#x9;&#x9;&#x9;&#x9;// sort_by: newest | oldest | votes,&#xA;&#x9;&#x9;&#x9;});&#xA;&#x9;&#x9;&#x9;&lt;/script&gt;</description>
     </item>
     <item>
       <title>Photoswipe Gallery Sample</title>

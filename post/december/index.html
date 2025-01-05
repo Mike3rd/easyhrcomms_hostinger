@@ -63,7 +63,7 @@
     "name" : "Some Person"
   },
   "headline": "December",
-  "description" : "",
+  "description" : " ",
   "inLanguage" : "en",
   "wordCount":  0 ,
   "datePublished" : "2024-12-01T15:18:29-05:00",
@@ -367,7 +367,22 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        
+        		
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<link href="comments.css" rel="stylesheet" type="text/css">		
+			<div class="comments"></div>
+
+			<script src="comments.js"></script>
+			<script>
+			new Comments({
+				page_id: 2,
+				// comments_to_show: 15,
+				// sort_by: newest | oldest | votes,
+			});
+			</script>
+			
+			
+
 
         
           <div class="blog-tags">
