@@ -1,4 +1,6 @@
 class Comments {
+	
+	php_file_url: 'https://easyhrcomms.com/post/phpcomments/comments.php'
 
     constructor(options) {
         let defaults = {
