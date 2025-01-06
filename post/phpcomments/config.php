@@ -19,5 +19,5 @@ define('authentication_required',false);
 define('max_nested_replies','2');
 // Max comment characters
 define('max_comment_chars',600);
-php_file_url: 'https://example.com/comments.php';
+php_file_url: 'https://easyhrcomms.com/post/phpcomments/comments.php';
 ?>
