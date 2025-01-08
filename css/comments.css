@@ -1,3 +1,9 @@
+
+ :root{
+	--checkout-text-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica Neue","Ubuntu",sans-serif; 
+ }
+
+
 .comments .comment_header {
   display: flex;
   border-bottom: 1px solid #eee;
@@ -8,7 +14,8 @@
 
 .comments .comment_header .total {
   color: #777777;
-  font-size: 14px;
+  font-size: 18px;
+   font-family:  var(--checkout-text-font-family);
   flex-grow: 1;
 }
 
