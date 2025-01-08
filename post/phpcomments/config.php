@@ -14,7 +14,7 @@ define('comments_approval_required',false);
 // Photo icon url input enabled
 define('photo_icon_url_enabled',false);
 // Authentication required?
-define('authentication_required',false);
+define('authentication_required',true);
 // Max nested replies
 define('max_nested_replies','2');
 // Max comment characters
