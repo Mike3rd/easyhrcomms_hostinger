@@ -6,7 +6,7 @@
  
  
  :root{
-	--checkout-text-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica Neue","Ubuntu",sans-serif; 
+	--checkout-text-font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif; 
  }
  
 a {color:#008AFF }
@@ -73,6 +73,7 @@ code {
 /*commentstko*/
 .commentwraptko {
 margin-top:10px;
+font-family:  var(--checkout-text-font-family);
 	
 }
 
