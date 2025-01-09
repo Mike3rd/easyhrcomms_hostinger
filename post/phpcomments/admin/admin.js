@@ -51,14 +51,6 @@ if (document.querySelector('.filters a')) {
         }
     };
 }
-document.querySelectorAll('.truncated-txt').forEach(element => {
-    if (element.querySelector('.read-more')) {
-        element.querySelector('.read-more').onclick = event => {
-            event.preventDefault();
-            element.classList.toggle('expanded');
-        };
-    }
-});
 document.querySelectorAll('.msg').forEach(element => {
     element.querySelector('.fa-times').onclick = () => {
         element.remove();

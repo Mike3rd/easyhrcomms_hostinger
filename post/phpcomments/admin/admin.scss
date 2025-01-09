@@ -1,7 +1,4 @@
-// Font Awesome Library
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css);
-// Variables
-$font: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
 $font-size: 16px;
 $header-size: 55px;
 $aside-width: 260px;
@@ -136,7 +133,6 @@ aside {
 		color: mix($admin-color, #fff, 40);
 		padding: 15px 20px;
 		i {
-			color: inherit;
 			width: 40px;
 		}
 		&:hover, &.selected {
@@ -170,22 +166,9 @@ aside {
 				display: inline-block;
 				width: 40px;
 				font-size: 12px;
-				color: inherit;
-				&.square {
-					display: inline-block;
-					width: 8px;
-					height: 8px;
-					margin: 0 30px 0 3px;
-					background-color: mix($admin-color, #fff, 40);
-				}
 			}
 			&:hover, &.selected {
 				color: #fff;
-				span {
-					&.square {
-						background-color: #fff;
-					}
-				}
 			}
 		}
 	}
@@ -240,35 +223,6 @@ main {
 		.btn {
 			height: 36px;
 		}
-		.title {
-			flex: 1;
-			display: flex;
-			align-items: center;
-			padding-bottom: 15px;
-			i {
-				display:inline-flex;
-				justify-content: center;
-				align-items: center;
-				background-color: #489c80;
-				color: #fff;
-				width: 52px;
-				height: 42px;
-				border-radius: 4px;
-				margin-right: 12px;
-				&.alt {
-					background-color: #7c8394;
-				}
-			}
-			h2 {
-				padding: 0 0 3px 0;
-			}
-			p {
-				margin: 0;
-				font-size: 14px;
-				color: mix($background-color, #000, 65);
-				font-weight: 500;
-			}
-		}
 	}
 	.msg {
 		display: flex;
@@ -305,32 +259,6 @@ main {
 			color: #a75151;
 			i {
 				color: #a75151;
-			}
-		}
-	}
-	.filter-list {
-		display: flex;
-		flex-flow: wrap;
-		.filter {
-			display: inline-flex;
-			align-items: center;
-			background-color: darken($background-color, 9);
-			border-radius: 50px;
-			padding: 3px 12px;
-			margin: 20px 10px 0 0;
-			font-size: 14px;
-			font-weight: 500;
-			color: lighten($header-color, 5);
-			a {
-				text-decoration: none;
-				margin-right: 10px;
-				color: lighten($header-color, 30);
-				i {
-					font-size: 14px;
-				}
-				&:hover {
-					color: lighten($header-color, 5);
-				}
 			}
 		}
 	}
@@ -401,7 +329,7 @@ main {
 			.list {
 				display: none;
 				top: calc(100% + 5px);
-				width: 200px;
+				width: 180px;
 				flex-flow: column;
 				position: absolute;
 				background-color: #fff;
@@ -414,17 +342,9 @@ main {
 				input {
 					margin-right: 10px;
 				}
-				input, select {
-					margin: 5px 0 5px 0;
-				}
-				input[type="text"] {
-					width: 100%;
-					padding: 3px;
-					border: 1px solid darken($background-color, 5);
-					font-size: 14px;
-				}
 				select {
 					width: 100%;
+					margin-bottom: 10px;
 					font-size: 14px;
 					padding: 3px;
 					border:1px solid darken($background-color, 5);
@@ -580,7 +500,7 @@ main {
 		flex-flow: column;
 		width: 500px;
 		padding: 20px;
-		input[type="text"], input[type="password"], input[type="datetime-local"], input[type="email"], input[type="number"], textarea, select, input[type="file"] {
+		input[type="text"], input[type="password"], input[type="datetime-local"], input[type="email"], input[type="number"], textarea, select {
 			width: 100%;
 			padding: 15px 5px;
 			margin-bottom: 25px;
@@ -619,37 +539,69 @@ main {
 				background-color: darken($background-color, 8);
 			}
 		}
-		.comment {
-			font-size: 14px;
-			color: lighten($text-color, 20);
-			padding: 10px 0 5px;
-			margin: 0;
-		}
-		.hidden {
-			display: none;
-		}
-		.source {
-			ul {
-				margin: 0;
-				padding: 0 15px 15px 20px;
+		.multiselect {
+			position: relative;
+			display: flex;
+			flex-flow: wrap;
+			border-bottom: 1px solid darken($background-color, 5);
+			padding-bottom: 10px;
+			margin: 15px 0 25px 0;
+			margin-bottom: 25px;
+			> .item {
+				display: inline-flex;
+				border: 1px solid darken($background-color, 5);
+				padding: 0 10px;
+				height: 40px;
+				margin: 0 5px 5px 0;
 				font-size: 14px;
-				color: lighten($text-color, 10);
-				li {
-					margin: 0;
-					padding: 0;
-					font-size: 14px;
-					margin-bottom: 15px;
-					strong {
-						display: inline-block;
-						font-weight: 500;
-						font-size: 14px;
-						padding: 0 0 5px 0;
-						color: $text-color;
-					}
-					em {
-						font-size: 14px;
+				justify-content: center;
+				align-items: center;
+				.remove {
+					font-style: normal;
+					cursor: pointer;
+					font-size: 19px;
+					margin-right: 3px;
+					margin-top: -2px;
+					color: darken($background-color, 20);
+					&:hover {
+						color: darken($background-color, 30);
 					}
 				}
+			}
+			input {
+				height: 40px;
+				width: 80px;
+				flex-grow: 1;
+				padding: 0;
+				margin: 0;
+				outline: 0;
+				border: 0;
+				&:hover {
+					border: 0;
+				}
+			}
+			.list {
+				display: none;
+				position: absolute;
+				top: 100%;
+				width: 100%;
+				flex-flow: column;
+				background-color: #fff;
+				box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.1);
+				max-height: 100px;
+				overflow-y: auto;
+				z-index: 1000000000;
+				span {
+					display: flex;
+					padding: 5px 7px;
+					cursor: pointer;
+					&:hover {
+						background-color: lighten($background-color, 3);
+					}
+				}
+			}
+			&:hover, &:active {
+				border-bottom: 1px solid darken($background-color, 20);
 			}
 		}
 	}
@@ -721,68 +673,6 @@ main {
 			}
 			td {
 				padding: 8px 0;
-				.green, .red, .grey {
-					font-size: 12px;;
-					font-weight: 500;
-					color: #fff;
-					border-radius: 50px;
-					padding: 3px 8px;
-				}
-				.green {
-					background-color: #4bb878;
-				}
-				.red {
-					background-color: #b14f4f;
-				}
-				.grey {
-					background-color: #777;
-				}
-				&.no-results {
-					text-align: center;
-					color: darken($background-color, 30);
-					line-height: 30px;
-				}
-				&.truncated-txt {
-					div {
-						color: darken($background-color, 45);
-						span {
-							display: inline;
-							font-size: 14px;
-							word-wrap: break-word;
-							&.full {
-								display: none;
-							}
-						}
-						.read-more {
-							text-decoration: none;
-							font-size: 14px;
-							color: #2762cf;
-							font-weight: 500;
-						}
-					}
-					&.expanded {
-						div {
-							span {
-								&.full {
-									display: inline;
-								}
-								&.short {
-									display: none;
-								}
-							}
-							.read-more {
-								display: none;
-							}
-						}
-					}
-				}
-				&.user {
-					span {
-						display: block;
-						color: darken($background-color, 30);
-						font-size: 14px;
-					}
-				}
 			}
 			.img {
 				width: 40px;
@@ -806,73 +696,38 @@ main {
 					height: 30px;
 				}
 			}
-			.rating {
-				$star-color: #F5A624;
-				$star-alt-color: #ececec;
-				display: flex;
-				.star, .star-alt {
-					font-size: 14px;
-					color: $star-color;
-					margin-right: 3px;				
-				}
-				.star-alt {
-					color: $star-alt-color;
-				}
-				.rating_value {
-					display: none;
-				}
+			.rrp {
+				color: #e26060;
 			}
 		}
 	}
 }
 .login {
 	background-color: lighten($background-color, 5);
-	padding-top: 50px;
 	form {
 		padding-top: 100px;
 		display: flex;
 		flex-flow: column;
-		width: 100%;
-		max-width: 350px;
+		width: 300px;
 		align-self: center;
 		margin: 0 auto;
-		background-color: #fff;
-		padding: 30px;
-		box-shadow: 0px 0px 7px 0 rgba(0,0,0,0.05);
-		h2 {
-			font-size: 20px;
-			font-weight: 600;
-			margin-bottom: 30px;
-			text-align: center;
-		}
-		input[type="password"], input[type="email"] {
-			border: 1px solid darken($background-color, 3);
+		input {
+			border: 1px solid darken($background-color, 15);
 			padding: 10px 10px;
 			margin-bottom: 15px;
-			border-radius: 4px;
-			&::placeholder {
-				color: darken($background-color, 30);
-			}
 		}
 		input[type="submit"] {
-			appearance: none;
-			background: #1b6fbe;
+			background: lighten($header-color, 10);
 			border: 0;
-			border-radius: 4px;
 			color: #FFFFFF;
 			width: 100%;
 			padding: 12px 0;
 			font-size: 14px;
-			font-weight: 500;
+			font-weight: 600;
 			cursor: pointer;
-			margin-top: 5px;
 			&:hover {
-				background: darken(#1b6fbe, 5);
+				background: lighten($header-color, 5);
 			}
-		}
-		p {
-			margin: 0;
-			padding: 25px 0 0 0;
 		}
 	}
 }

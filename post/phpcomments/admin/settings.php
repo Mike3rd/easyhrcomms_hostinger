@@ -7,14 +7,14 @@ $contents = file_get_contents($file);
 // Format key function
 function format_key($key) {
     $key = str_replace(
-        ['_', 'url', 'db ', ' pass', ' user', ' id', ' uri', 'smtp'], 
-        [' ', 'URL', 'Database ', ' Password', ' Username', ' ID', ' URI', 'SMTP'], 
+        ['_', 'url', 'db ', ' pass', ' user', 'ipn', 'paypal'], 
+        [' ', 'URL', 'Database ', ' Password', ' Username', 'IPN', 'PayPal'], 
         strtolower($key)
     );
     return ucwords($key);
 }
 // Format HTML output function
-function format_var_html($key, $value, $comment, $list = []) {
+function format_var_html($key, $value) {
     $html = '';
     $type = 'text';
     $value = htmlspecialchars(trim($value, '\''), ENT_QUOTES);
@@ -22,23 +22,10 @@ function format_var_html($key, $value, $comment, $list = []) {
     $type = in_array(strtolower($value), ['true', 'false']) ? 'checkbox' : $type;
     $checked = strtolower($value) == 'true' ? ' checked' : '';
     $html .= '<label for="' . $key . '">' . format_key($key) . '</label>';
-    if (substr($comment, 0, 2) === '//') {
-        $html .= '<p class="comment">' . ltrim($comment, '//') . '</p>';
-    }
     if ($type == 'checkbox') {
         $html .= '<input type="hidden" name="' . $key . '" value="false">';
     }
-    if ($list) {
-        $html .= '<select name="' . $key . '" id="' . $key . '">';
-        foreach ($list as $item) {
-            $item = explode('=', trim($item));
-            $selected = strtolower($item[0]) == strtolower($value) ? ' selected' : '';
-            $html .= '<option value="' . $item[0] . '"' . $selected . '>' . $item[1] . '</option>';
-        }
-        $html .= '</select>';
-    } else {
-        $html .= '<input type="' . $type . '" name="' . $key . '" id="' . $key . '" value="' . $value . '" placeholder="' . format_key($key) . '"' . $checked . '>';
-    }
+    $html .= '<input type="' . $type . '" name="' . $key . '" id="' . $key . '" value="' . $value . '" placeholder="' . format_key($key) . '"' . $checked . '>';
     return $html;
 }
 // Format tabs
@@ -65,8 +52,7 @@ function format_form($contents) {
         }
         preg_match('/define\(\'(.*?)\', ?(.*?)\)/', $rows[$i], $match);
         if ($match) {
-            $list = substr($rows[$i-1], 0, 8) === '// List:' ? explode(',', ltrim($rows[$i-1], '// List:')) : [];
-            echo format_var_html($match[1], $match[2], $list ? $rows[$i-2] : $rows[$i-1], $list);
+            echo format_var_html($match[1], $match[2]);
         }
     }  
     echo '</div>';
@@ -74,9 +60,8 @@ function format_form($contents) {
 if (!empty($_POST)) {
     // Update the configuration file with the new keys and values
     foreach ($_POST as $k => $v) {
-        $val = in_array(strtolower($v), ['true', 'false']) ? strtolower($v) : '\'' . $v . '\'';
-        $val = is_numeric($v) ? $v : $val;
-        $contents = preg_replace('/define\(\'' . $k . '\'\, ?(.*?)\)/s', 'define(\'' . $k . '\',' . $val . ')', $contents);
+        $v = in_array(strtolower($v), ['true', 'false']) ? strtolower($v) : '\'' . $v . '\'';
+        $contents = preg_replace('/define\(\'' . $k . '\'\, ?(.*?)\)/s', 'define(\'' . $k . '\',' . $v . ')', $contents);
     }
     file_put_contents('../config.php', $contents);
     header('Location: settings.php?success_msg=1');
@@ -116,7 +101,7 @@ if (isset($_GET['success_msg'])) {
 </form>
 
 <script>
-document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
     checkbox.onclick = () => checkbox.value = checkbox.checked ? 'true' : 'false';
 });
 </script>

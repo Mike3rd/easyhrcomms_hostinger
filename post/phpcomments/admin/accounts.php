@@ -6,7 +6,7 @@ $search = isset($_GET['search']) ? $_GET['search'] : '';
 // Order by column
 $order = isset($_GET['order']) && $_GET['order'] == 'DESC' ? 'DESC' : 'ASC';
 // Add/remove columns to the whitelist array
-$order_by_whitelist = ['id','email','display_name','role','comments'];
+$order_by_whitelist = ['id','email','display_name','role'];
 $order_by = isset($_GET['order_by']) && in_array($_GET['order_by'], $order_by_whitelist) ? $_GET['order_by'] : 'id';
 // Number of results per pagination page
 $results_per_page = 20;
@@ -16,14 +16,14 @@ $param2 = $results_per_page;
 $param3 = '%' . $search . '%';
 // SQL where clause
 $where = '';
-$where .= $search ? 'WHERE (a.email LIKE :search OR a.display_name LIKE :search) ' : '';
+$where .= $search ? 'WHERE (email LIKE :search OR display_name LIKE :search) ' : '';
 // Retrieve the total number of products
-$stmt = $pdo->prepare('SELECT COUNT(*) AS total FROM accounts a ' . $where);
+$stmt = $pdo->prepare('SELECT COUNT(*) AS total FROM accounts ' . $where);
 if ($search) $stmt->bindParam('search', $param3, PDO::PARAM_STR);
 $stmt->execute();
 $accounts_total = $stmt->fetchColumn();
 // SQL query to get all products from the "products" table
-$stmt = $pdo->prepare('SELECT a.*, (SELECT COUNT(c.id) FROM comments c WHERE c.acc_id = a.id) AS comments FROM accounts a ' . $where . ' ORDER BY ' . $order_by . ' ' . $order . ' LIMIT :start_results,:num_results');
+$stmt = $pdo->prepare('SELECT * FROM accounts ' . $where . ' ORDER BY ' . $order_by . ' ' . $order . ' LIMIT :start_results,:num_results');
 // Bind params
 $stmt->bindParam('start_results', $param1, PDO::PARAM_INT);
 $stmt->bindParam('num_results', $param2, PDO::PARAM_INT);
@@ -49,13 +49,7 @@ $url = 'accounts.php?search=' . $search;
 <?=template_admin_header('Accounts', 'accounts', 'view')?>
 
 <div class="content-title">
-    <div class="title">
-        <i class="fa-solid fa-users"></i>
-        <div class="txt">
-            <h2>Accounts</h2>
-            <p>View, manage, and search accounts.</p>
-        </div>
-    </div>
+    <h2>Accounts</h2>
 </div>
 
 <?php if (isset($success_msg)): ?>
@@ -89,7 +83,6 @@ $url = 'accounts.php?search=' . $search;
                     <td><a href="<?=$url . '&order=' . ($order=='ASC'?'DESC':'ASC') . '&order_by=email'?>">Email<?php if ($order_by=='email'): ?><i class="fas fa-level-<?=str_replace(['ASC', 'DESC'], ['up','down'], $order)?>-alt fa-xs"></i><?php endif; ?></a></td>
                     <td><a href="<?=$url . '&order=' . ($order=='ASC'?'DESC':'ASC') . '&order_by=display_name'?>">Display Name<?php if ($order_by=='display_name'): ?><i class="fas fa-level-<?=str_replace(['ASC', 'DESC'], ['up','down'], $order)?>-alt fa-xs"></i><?php endif; ?></a></td>
                     <td class="responsive-hidden"><a href="<?=$url . '&order=' . ($order=='ASC'?'DESC':'ASC') . '&order_by=role'?>">Role<?php if ($order_by=='role'): ?><i class="fas fa-level-<?=str_replace(['ASC', 'DESC'], ['up','down'], $order)?>-alt fa-xs"></i><?php endif; ?></a></td>
-                    <td class="responsive-hidden"><a href="<?=$url . '&order=' . ($order=='ASC'?'DESC':'ASC') . '&order_by=comments'?>">Comments<?php if ($order_by=='comments'): ?><i class="fas fa-level-<?=str_replace(['ASC', 'DESC'], ['up','down'], $order)?>-alt fa-xs"></i><?php endif; ?></a></td>
                     <td>Actions</td>
                 </tr>
             </thead>
@@ -105,7 +98,6 @@ $url = 'accounts.php?search=' . $search;
                     <td><?=htmlspecialchars($account['email'], ENT_QUOTES)?></td>
                     <td><?=htmlspecialchars($account['display_name'], ENT_QUOTES)?></td>
                     <td class="responsive-hidden"><?=$account['role']?></td>
-                    <td class="responsive-hidden"><a href="comments.php?acc_id=<?=$account['id']?>" class="link1"><?=number_format($account['comments'])?></a></td>
                     <td><a href="account.php?id=<?=$account['id']?>" class="link1">Edit</a></td>
                 </tr>
                 <?php endforeach; ?>
