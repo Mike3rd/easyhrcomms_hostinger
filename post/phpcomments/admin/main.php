@@ -38,19 +38,24 @@ function template_admin_header($title, $selected = 'orders', $selected_child = '
         <a href="index.php"' . ($selected == 'dashboard' ? ' class="selected"' : '') . '><i class="fas fa-tachometer-alt"></i>Dashboard</a>
         <a href="comments.php"' . ($selected == 'comments' ? ' class="selected"' : '') . '><i class="fas fa-comments"></i>Comments</a>
         <div class="sub">
-            <a href="comments.php"' . ($selected == 'comments' && $selected_child == 'view' ? ' class="selected"' : '') . '><span>&#9724;</span>View Comments</a>
-            <a href="comment.php"' . ($selected == 'comments' && $selected_child == 'manage' ? ' class="selected"' : '') . '><span>&#9724;</span>Create Comment</a>
+            <a href="comments.php"' . ($selected == 'comments' && $selected_child == 'view' ? ' class="selected"' : '') . '><span class="square"></span>View Comments</a>
+            <a href="comment.php"' . ($selected == 'comments' && $selected_child == 'manage' ? ' class="selected"' : '') . '><span class="square"></span>Create Comment</a>
+            <a href="comments_import.php"' . ($selected == 'comments' && $selected_child == 'import' ? ' class="selected"' : '') . '><span class="square"></span>Import</a>
+            <a href="comments_export.php"' . ($selected == 'comments' && $selected_child == 'export' ? ' class="selected"' : '') . '><span class="square"></span>Export</a>
         </div>
-        <a href="filters.php"' . ($selected == 'filters' ? ' class="selected"' : '') . '><i class="fas fa-filter"></i>Filters</a>
+        <a href="comment_filters.php"' . ($selected == 'comment_filters' ? ' class="selected"' : '') . '><i class="fas fa-filter"></i>Filters</a>
         <div class="sub">
-            <a href="filters.php"' . ($selected == 'filters' && $selected_child == 'view' ? ' class="selected"' : '') . '><span>&#9724;</span>View Filters</a>
-            <a href="filter.php"' . ($selected == 'filters' && $selected_child == 'manage' ? ' class="selected"' : '') . '><span>&#9724;</span>Create Filter</a>
+            <a href="comment_filters.php"' . ($selected == 'comment_filters' && $selected_child == 'view' ? ' class="selected"' : '') . '><span class="square"></span>View Filters</a>
+            <a href="comment_filter.php"' . ($selected == 'comment_filters' && $selected_child == 'manage' ? ' class="selected"' : '') . '><span class="square"></span>Create Filter</a>
+            <a href="comment_filter_bulk.php"' . ($selected == 'comment_filters' && $selected_child == 'manage_bulk' ? ' class="selected"' : '') . '><span class="square"></span>Create Filter Bulk</a>
         </div>
+        <a href="comment_pages.php"' . ($selected == 'pages' ? ' class="selected"' : '') . '><i class="fa-solid fa-file-lines"></i>Pages</a>
         <a href="accounts.php"' . ($selected == 'accounts' ? ' class="selected"' : '') . '><i class="fas fa-users"></i>Accounts</a>
         <div class="sub">
-            <a href="accounts.php"' . ($selected == 'accounts' && $selected_child == 'view' ? ' class="selected"' : '') . '><span>&#9724;</span>View Accounts</a>
-            <a href="account.php"' . ($selected == 'accounts' && $selected_child == 'manage' ? ' class="selected"' : '') . '><span>&#9724;</span>Create Account</a>
+            <a href="accounts.php"' . ($selected == 'accounts' && $selected_child == 'view' ? ' class="selected"' : '') . '><span class="square"></span>View Accounts</a>
+            <a href="account.php"' . ($selected == 'accounts' && $selected_child == 'manage' ? ' class="selected"' : '') . '><span class="square"></span>Create Account</a>
         </div>
+        <a href="emailtemplates.php"' . ($selected == 'emailtemplates' ? ' class="selected"' : '') . '><i class="fas fa-envelope"></i>Email Templates</a>
         <a href="settings.php"' . ($selected == 'settings' ? ' class="selected"' : '') . '><i class="fas fa-tools"></i>Settings</a>
     ';
 // DO NOT INDENT THE BELOW CODE
@@ -63,7 +68,6 @@ echo <<<EOT
 		<title>$title</title>
         <link rel="icon" type="image/png" href="../favicon.png">
 		<link href="admin.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
 	</head>
 	<body class="admin">
         <aside class="responsive-width-100 responsive-hidden">
@@ -71,7 +75,7 @@ echo <<<EOT
             $admin_links
             <div class="footer">
                 <a href="https://codeshack.io/package/php/advanced-commenting-system/" target="_blank">Advanced Commenting System</a>
-                Version 2.0.0
+                Version 2.1.1
             </div>
         </aside>
         <main class="responsive-width-100">

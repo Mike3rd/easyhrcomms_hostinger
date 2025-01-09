@@ -25,6 +25,7 @@ if (isset($_POST['admin_email'], $_POST['admin_password'])) {
         $_SESSION['comment_account_id'] = $account['id'];
         $_SESSION['comment_account_display_name'] = $account['display_name'];
         $_SESSION['comment_account_role'] = $account['role'];
+        $_SESSION['comment_account_email'] = $account['email'];
         // Redirect to dashboard page
         header('Location: index.php');
         exit;
@@ -42,11 +43,14 @@ if (isset($_POST['admin_email'], $_POST['admin_password'])) {
         <link href="admin.css" rel="stylesheet" type="text/css">
 	</head>
 	<body class="login">
-        <form action="" method="post" class="">
+        <form action="" method="post">
+            <h2>Admin Login</h2>
             <input type="email" name="admin_email" placeholder="Email" required>
             <input type="password" name="admin_password" placeholder="Password" required>
             <input type="submit" value="Login">
+            <?php if ($msg): ?>
             <p><?=$msg?></p>
+            <?php endif; ?>
         </form>
     </body>
 </html>
