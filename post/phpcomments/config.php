@@ -26,7 +26,7 @@ define('max_comment_edit_time',60);
 // If enabled, the user can search for comments.
 define('search_enabled',false);
 // The directory URL where the comment files are located.
-define('comments_url','http://example.com/comments/');
+define('comments_url','http://example.com//post/phpcomments/');
 /* Mail */
 // Send mail to users, etc?
 define('mail_enabled',false);
