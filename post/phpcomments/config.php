@@ -12,9 +12,9 @@ define('db_charset','utf8');
 /* Comments */
 // Comments require approval before they are displayed on the website.
 // List:0=No Approval Required,1=Approval Required for Guests,2=Approval Required for All Users
-define('comments_approval_level',0);
+define('comments_approval_level',1);
 // Authentication will require the user to login or register before they can write a comment.
-define('authentication_required',false);
+define('authentication_required',true);
 // The maximum number of nested replies.
 define('max_nested_replies',2);
 // The maximum number of characters the user can enter in the comment.
