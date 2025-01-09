@@ -29,13 +29,13 @@ define('search_enabled',false);
 define('comments_url','http://easyhrcomms.com/post/phpcomments/');
 /* Mail */
 // Send mail to users, etc?
-define('mail_enabled',yes);
+define('mail_enabled',false);
 // This is the email address that will be used to send emails.
 define('mail_from','noreply@example.com');
 // This is the email address that will receive the notifications.
-define('notification_email','mturko@outlook.com');
+define('notification_email','notifications@example.com');
 // The name of your business.
-define('mail_name','Easy HR Comms');
+define('mail_name','Your Business Name');
 // If enabled, the mail will be sent using SMTP.
 define('SMTP',false);
 // Your SMTP hostname.
