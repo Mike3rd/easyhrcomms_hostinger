@@ -8,9 +8,9 @@ $comment = [
     'content' => '',
     'submit_date' => date('Y-m-d H:i:s'),
     'votes' => '',
-    'img' => '',
     'approved' => 1,
-    'acc_id' => -1
+    'acc_id' => -1,
+    'featured' => 0,
 ];
 // Retrieve accounts from the database
 $stmt = $pdo->prepare('SELECT * FROM accounts');
@@ -25,8 +25,8 @@ if (isset($_GET['id'])) {
     $page = 'Edit';
     if (isset($_POST['submit'])) {
         // Update the comment
-        $stmt = $pdo->prepare('UPDATE comments SET page_id = ?, parent_id = ?, display_name = ?, content = ?, submit_date = ?, votes = ?, img = ?, approved = ?, acc_id = ? WHERE id = ?');
-        $stmt->execute([ $_POST['page_id'], $_POST['parent_id'], $_POST['display_name'], $_POST['content'], date('Y-m-d H:i:s', strtotime($_POST['submit_date'])), $_POST['votes'], $_POST['img'], $_POST['approved'], $_POST['acc_id'], $_GET['id'] ]);
+        $stmt = $pdo->prepare('UPDATE comments SET page_id = ?, parent_id = ?, display_name = ?, content = ?, submit_date = ?, votes = ?, approved = ?, acc_id = ?, featured = ? WHERE id = ?');
+        $stmt->execute([ $_POST['page_id'], $_POST['parent_id'], $_POST['display_name'], $_POST['content'], date('Y-m-d H:i:s', strtotime($_POST['submit_date'])), $_POST['votes'], $_POST['approved'], $_POST['acc_id'], $_POST['featured'], $_GET['id'] ]);
         header('Location: comments.php?success_msg=2');
         exit;
     }
@@ -41,8 +41,8 @@ if (isset($_GET['id'])) {
     // Create a new comment
     $page = 'Create';
     if (isset($_POST['submit'])) {
-        $stmt = $pdo->prepare('INSERT INTO comments (page_id,parent_id,display_name,content,submit_date,votes,img,approved,acc_id) VALUES (?,?,?,?,?,?,?,?,?)');
-        $stmt->execute([ $_POST['page_id'], $_POST['parent_id'], $_POST['display_name'], $_POST['content'], date('Y-m-d H:i:s', strtotime($_POST['submit_date'])), $_POST['votes'], $_POST['img'], $_POST['approved'], $_POST['acc_id'] ]);
+        $stmt = $pdo->prepare('INSERT INTO comments (page_id,parent_id,display_name,content,submit_date,votes,approved,acc_id,featured) VALUES (?,?,?,?,?,?,?,?,?)');
+        $stmt->execute([ $_POST['page_id'], $_POST['parent_id'], $_POST['display_name'], $_POST['content'], date('Y-m-d H:i:s', strtotime($_POST['submit_date'])), $_POST['votes'], $_POST['approved'], $_POST['acc_id'], $_POST['featured'] ]);
         header('Location: comments.php?success_msg=1');
         exit;
     }
@@ -83,20 +83,23 @@ if (isset($_GET['id'])) {
             <label for="votes"><i class="required">*</i> Votes</label>
             <input id="votes" type="number" name="votes" placeholder="Votes" value="<?=$comment['votes']?>" required>
 
-            <label for="img">Image URL</label>
-            <input id="img" type="text" name="img" placeholder="Image" value="<?=htmlspecialchars($comment['img'], ENT_QUOTES)?>">
-
             <label for="approved"><i class="required">*</i> Approved</label>
             <select id="approved" name="approved" required>
                 <option value="0"<?=$comment['approved']==0?' selected':''?>>No</option>
                 <option value="1"<?=$comment['approved']==1?' selected':''?>>Yes</option>
             </select>
 
+            <label for="featured"><i class="required">*</i> Featured</label>
+            <select id="featured" name="featured" required>
+                <option value="0"<?=$comment['featured']==0?' selected':''?>>No</option>
+                <option value="1"<?=$comment['featured']==1?' selected':''?>>Yes</option>
+            </select>
+
             <label for="acc_id">Account</label>
             <select id="acc_id" name="acc_id" required>
                 <option value="-1">(none)</option>
                 <?php foreach ($accounts as $account): ?>
-                <option value="<?=$account['id']?>"><?=$account['id']?> - <?=$account['email']?></option>
+                <option value="<?=$account['id']?>"<?=$account['id']==$comment['acc_id']?' selected':''?>><?=$account['id']?> - <?=$account['email']?></option>
                 <?php endforeach; ?>
             </select>
 

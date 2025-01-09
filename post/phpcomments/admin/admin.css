@@ -1,6 +1,7 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css);
 * {
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 16px;
 }
 
@@ -34,7 +35,6 @@ header {
   background-color: #fff;
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.15);
 }
-
 header a {
   display: inline-flex;
   color: #4a5361;
@@ -44,19 +44,15 @@ header a {
   align-items: center;
   padding: 0 20px;
 }
-
 header a i {
   font-size: 16px;
 }
-
 header a:hover, header a:active {
   color: #606c7e;
 }
-
 header .space-between {
   flex: 1;
 }
-
 header .dropdown {
   display: inline-flex;
   color: #4a5361;
@@ -66,15 +62,12 @@ header .dropdown {
   align-items: center;
   padding: 0 30px;
 }
-
 header .dropdown i {
   font-size: 18px;
 }
-
 header .dropdown:hover, header .dropdown:active {
   color: #606c7e;
 }
-
 header .dropdown .list {
   display: none;
   position: absolute;
@@ -85,21 +78,17 @@ header .dropdown .list {
   border-top: 1px solid #eee;
   box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.05);
 }
-
 header .dropdown .list a {
   padding: 10px 15px;
   font-size: 14px;
 }
-
 header .dropdown .list a:hover {
   background-color: #fbfbfb;
 }
-
 header .dropdown:hover .list, header .dropdown:active .list {
   display: flex;
   flex-flow: column;
 }
-
 header.full {
   padding-left: 0;
 }
@@ -114,7 +103,6 @@ aside {
   background-color: #26292f;
   overflow-y: auto;
 }
-
 aside h1 {
   display: inline-flex;
   background-color: #5472bd;
@@ -130,7 +118,6 @@ aside h1 {
   padding: 0 20px;
   justify-content: center;
 }
-
 aside > a {
   font-size: 14px;
   font-weight: 600;
@@ -138,22 +125,19 @@ aside > a {
   color: #afb1b5;
   padding: 15px 20px;
 }
-
 aside > a i {
+  color: inherit;
   width: 40px;
 }
-
 aside > a:hover, aside > a.selected {
   background-color: #383d48;
   color: #fff;
   border-left: 3px solid #4a79b4;
   padding: 15px 17px;
 }
-
 aside > a.selected + .sub {
   display: flex;
 }
-
 aside > a .note {
   background-color: #383c46;
   padding: 1px 5px;
@@ -161,31 +145,37 @@ aside > a .note {
   font-size: 12px;
   margin-left: 10px;
 }
-
 aside .sub {
   display: none;
   flex-flow: column;
   background-color: #1d1f24;
   padding: 13px 0;
 }
-
 aside .sub a {
   font-size: 14px;
   color: #afb1b5;
   text-decoration: none;
   padding: 4px 20px;
 }
-
 aside .sub a span {
   display: inline-block;
   width: 40px;
   font-size: 12px;
+  color: inherit;
 }
-
+aside .sub a span.square {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 30px 0 3px;
+  background-color: #afb1b5;
+}
 aside .sub a:hover, aside .sub a.selected {
   color: #fff;
 }
-
+aside .sub a:hover span.square, aside .sub a.selected span.square {
+  background-color: #fff;
+}
 aside .footer {
   display: flex;
   flex-flow: column;
@@ -195,18 +185,15 @@ aside .footer {
   font-size: 14px;
   color: #5a5b5e;
 }
-
 aside .footer a {
   text-decoration: none;
   font-size: 14px;
   color: #707276;
   padding-bottom: 2px;
 }
-
 aside .footer a:hover {
   color: #7c7f83;
 }
-
 aside.closed {
   display: none;
 }
@@ -216,38 +203,60 @@ main {
   padding-left: 290px;
   padding-top: 85px;
 }
-
 main.full {
   padding-left: 30px;
   padding-right: 30px;
 }
-
 main h2 {
   font-size: 20px;
   padding-bottom: 20px;
   font-weight: 600;
 }
-
 main h2 span {
   font-size: 16px;
   margin-left: 5px;
   font-weight: 600;
   color: #959faf;
 }
-
 main .content-title {
   border-bottom: 1px solid #dbdddf;
   display: flex;
 }
-
 main .content-title h2 {
   flex: 1;
 }
-
 main .content-title .btn {
   height: 36px;
 }
-
+main .content-title .title {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-bottom: 15px;
+}
+main .content-title .title i {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #489c80;
+  color: #fff;
+  width: 52px;
+  height: 42px;
+  border-radius: 4px;
+  margin-right: 12px;
+}
+main .content-title .title i.alt {
+  background-color: #7c8394;
+}
+main .content-title .title h2 {
+  padding: 0 0 3px 0;
+}
+main .content-title .title p {
+  margin: 0;
+  font-size: 14px;
+  color: #99999a;
+  font-weight: 500;
+}
 main .msg {
   display: flex;
   align-items: center;
@@ -256,54 +265,70 @@ main .msg {
   font-weight: 500;
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.1);
 }
-
 main .msg p {
   margin: 0;
   padding: 0 15px;
   font-size: 14px;
   flex: 1;
 }
-
 main .msg i.fa-times {
   align-self: flex-end;
   justify-content: flex-end;
   cursor: pointer;
 }
-
 main .msg i.fa-times:hover {
-  opacity: .9;
+  opacity: 0.9;
 }
-
 main .msg.success {
   background-color: #C3F3D7;
   border-left: 4px solid #51a775;
   color: #51a775;
 }
-
 main .msg.success i {
   color: #51a775;
 }
-
 main .msg.error {
   background-color: #f3c3c3;
   border-left: 4px solid #a75151;
   color: #a75151;
 }
-
 main .msg.error i {
   color: #a75151;
 }
-
+main .filter-list {
+  display: flex;
+  flex-flow: wrap;
+}
+main .filter-list .filter {
+  display: inline-flex;
+  align-items: center;
+  background-color: #d3d5d7;
+  border-radius: 50px;
+  padding: 3px 12px;
+  margin: 20px 10px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555f6f;
+}
+main .filter-list .filter a {
+  text-decoration: none;
+  margin-right: 10px;
+  color: #959faf;
+}
+main .filter-list .filter a i {
+  font-size: 14px;
+}
+main .filter-list .filter a:hover {
+  color: #555f6f;
+}
 main .content-header {
   display: flex;
   justify-content: space-between;
 }
-
 main .content-header form {
   display: flex;
   justify-content: space-between;
 }
-
 main .content-header form .search input, main .content-header form > select {
   background-color: transparent;
   outline: none;
@@ -314,15 +339,12 @@ main .content-header form .search input, main .content-header form > select {
   padding-right: 25px;
   margin-left: 10px;
 }
-
 main .content-header form .search input:hover, main .content-header form .search input:active, main .content-header form > select:hover, main .content-header form > select:active {
   border-bottom: 1px solid #b5b9bd;
 }
-
 main .content-header form > select {
   width: 150px;
 }
-
 main .content-header form > a {
   text-decoration: none;
   display: inline-flex;
@@ -331,15 +353,12 @@ main .content-header form > a {
   align-items: center;
   padding: 0 5px;
 }
-
 main .content-header form > a:hover {
   color: #4f5357;
 }
-
 main .content-header .search label {
   position: relative;
 }
-
 main .content-header .search i {
   position: absolute;
   right: 4px;
@@ -350,7 +369,6 @@ main .content-header .search i {
   margin-bottom: auto;
   color: #b5b9bd;
 }
-
 main .content-header .filters {
   display: flex;
   position: relative;
@@ -358,46 +376,47 @@ main .content-header .filters {
   margin-bottom: 3px;
   align-items: center;
 }
-
 main .content-header .filters a {
   text-decoration: none;
   font-weight: 600;
   color: #4a5361;
   white-space: nowrap;
 }
-
 main .content-header .filters a:hover {
   color: #343a44;
 }
-
 main .content-header .filters .list {
   display: none;
   top: calc(100% + 5px);
-  width: 180px;
+  width: 200px;
   flex-flow: column;
   position: absolute;
   background-color: #fff;
   padding: 10px;
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
 }
-
 main .content-header .filters .list label {
   padding-bottom: 5px;
   font-size: 14px;
 }
-
 main .content-header .filters .list input {
   margin-right: 10px;
 }
-
+main .content-header .filters .list input, main .content-header .filters .list select {
+  margin: 5px 0 5px 0;
+}
+main .content-header .filters .list input[type=text] {
+  width: 100%;
+  padding: 3px;
+  border: 1px solid #dedfe1;
+  font-size: 14px;
+}
 main .content-header .filters .list select {
   width: 100%;
-  margin-bottom: 10px;
   font-size: 14px;
   padding: 3px;
   border: 1px solid #dedfe1;
 }
-
 main .content-header .filters .list button {
   background: #4a79b4;
   border: 0;
@@ -409,11 +428,9 @@ main .content-header .filters .list button {
   cursor: pointer;
   border-radius: 4px;
 }
-
 main .content-header .filters .list button:hover {
   background: #4672a9;
 }
-
 main .content-block {
   background-color: #fff;
   margin-top: 25px;
@@ -421,7 +438,6 @@ main .content-block {
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.03);
   overflow: hidden;
 }
-
 main .content-block .block-header {
   position: relative;
   border-bottom: 1px solid #f0f1f2;
@@ -432,7 +448,6 @@ main .content-block .block-header {
   font-size: 14px;
   font-weight: 500;
 }
-
 main .content-block .block-header i {
   display: inline-flex;
   height: 25px;
@@ -445,26 +460,21 @@ main .content-block .block-header i {
   color: #6e94ba;
   margin-right: 10px;
 }
-
 main .content-block-wrapper {
   display: flex;
   width: 100%;
   padding-top: 25px;
 }
-
 main .content-block-wrapper .content-block {
   width: 100%;
   margin: 0 10px;
 }
-
 main .content-block-wrapper .content-block:first-child {
   margin-left: 0;
 }
-
 main .content-block-wrapper .content-block:last-child {
   margin-right: 0;
 }
-
 main .tabs {
   display: flex;
   overflow-x: auto;
@@ -474,7 +484,6 @@ main .tabs {
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.03);
   z-index: 100;
 }
-
 main .tabs a {
   display: flex;
   text-decoration: none;
@@ -484,42 +493,34 @@ main .tabs a {
   font-weight: 500;
   font-size: 14px;
 }
-
 main .tabs a:hover {
   background-color: #d8dadc;
 }
-
 main .tabs a.active {
   color: #4a5361;
   background-color: #fff;
 }
-
 main .tabs ~ .content-block {
   margin-top: 0;
   box-shadow: 0px 6px 5px 1px rgba(0, 0, 0, 0.03);
 }
-
 main .tab-content {
   display: none;
 }
-
 main .tab-content.active {
   display: block;
 }
-
 main .dashboard {
   display: flex;
   justify-content: space-between;
   padding-bottom: 40px;
 }
-
 main .dashboard .stat {
   width: 24%;
   padding: 0;
   display: flex;
   flex-flow: wrap;
 }
-
 main .dashboard .stat > i {
   display: inline-flex;
   justify-content: center;
@@ -533,25 +534,21 @@ main .dashboard .stat > i {
   background-color: #d5e7fa;
   color: #6e94ba;
 }
-
 main .dashboard .stat .data {
   padding: 7px;
   flex: 1;
 }
-
 main .dashboard .stat .data h3 {
   font-size: 16px;
   font-weight: 400;
   padding: 15px 15px 0 15px;
 }
-
 main .dashboard .stat .data p {
   margin: 0;
   padding: 10px 15px 15px 15px;
   font-size: 24px;
   font-weight: 700;
 }
-
 main .dashboard .stat .footer {
   width: 100%;
   border-top: 1px solid #ebeced;
@@ -560,50 +557,41 @@ main .dashboard .stat .footer {
   font-size: 14px;
   padding: 10px;
 }
-
 main .dashboard .stat .footer i {
   padding-right: 5px;
 }
-
 main .form {
   display: flex;
   flex-flow: column;
   width: 500px;
   padding: 20px;
 }
-
-main .form input[type="text"], main .form input[type="password"], main .form input[type="datetime-local"], main .form input[type="email"], main .form input[type="number"], main .form textarea, main .form select {
+main .form input[type=text], main .form input[type=password], main .form input[type=datetime-local], main .form input[type=email], main .form input[type=number], main .form textarea, main .form select, main .form input[type=file] {
   width: 100%;
   padding: 15px 5px;
   margin-bottom: 25px;
   border: 0;
   border-bottom: 1px solid #dedfe1;
 }
-
-main .form input[type="text"]:hover, main .form input[type="text"]:active, main .form input[type="password"]:hover, main .form input[type="password"]:active, main .form input[type="datetime-local"]:hover, main .form input[type="datetime-local"]:active, main .form input[type="email"]:hover, main .form input[type="email"]:active, main .form input[type="number"]:hover, main .form input[type="number"]:active, main .form textarea:hover, main .form textarea:active, main .form select:hover, main .form select:active {
+main .form input[type=text]:hover, main .form input[type=text]:active, main .form input[type=password]:hover, main .form input[type=password]:active, main .form input[type=datetime-local]:hover, main .form input[type=datetime-local]:active, main .form input[type=email]:hover, main .form input[type=email]:active, main .form input[type=number]:hover, main .form input[type=number]:active, main .form textarea:hover, main .form textarea:active, main .form select:hover, main .form select:active, main .form input[type=file]:hover, main .form input[type=file]:active {
   border-bottom: 1px solid #b5b9bd;
 }
-
 main .form textarea {
   height: 200px;
 }
-
-main .form input[type="checkbox"] {
+main .form input[type=checkbox] {
   width: auto;
   margin: 15px 0 25px 2px;
   transform: scale(1.2);
 }
-
 main .form label {
   display: block;
   font-weight: 600;
 }
-
 main .form label .required {
   font-style: normal;
   color: #e26060;
 }
-
 main .form button {
   background-color: #dedfe1;
   color: #676d72;
@@ -614,103 +602,54 @@ main .form button {
   font-size: 14px;
   cursor: pointer;
 }
-
 main .form button:hover {
   background-color: #d6d8da;
 }
-
-main .form .multiselect {
-  position: relative;
-  display: flex;
-  flex-flow: wrap;
-  border-bottom: 1px solid #dedfe1;
-  padding-bottom: 10px;
-  margin: 15px 0 25px 0;
-  margin-bottom: 25px;
-}
-
-main .form .multiselect > .item {
-  display: inline-flex;
-  border: 1px solid #dedfe1;
-  padding: 0 10px;
-  height: 40px;
-  margin: 0 5px 5px 0;
+main .form .comment {
   font-size: 14px;
-  justify-content: center;
-  align-items: center;
-}
-
-main .form .multiselect > .item .remove {
-  font-style: normal;
-  cursor: pointer;
-  font-size: 19px;
-  margin-right: 3px;
-  margin-top: -2px;
-  color: #b5b9bd;
-}
-
-main .form .multiselect > .item .remove:hover {
-  color: #9aa0a5;
-}
-
-main .form .multiselect input {
-  height: 40px;
-  width: 80px;
-  flex-grow: 1;
-  padding: 0;
+  color: #888888;
+  padding: 10px 0 5px;
   margin: 0;
-  outline: 0;
-  border: 0;
 }
-
-main .form .multiselect input:hover {
-  border: 0;
-}
-
-main .form .multiselect .list {
+main .form .hidden {
   display: none;
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  flex-flow: column;
-  background-color: #fff;
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
-  max-height: 100px;
-  overflow-y: auto;
-  z-index: 1000000000;
 }
-
-main .form .multiselect .list span {
-  display: flex;
-  padding: 5px 7px;
-  cursor: pointer;
+main .form .source ul {
+  margin: 0;
+  padding: 0 15px 15px 20px;
+  font-size: 14px;
+  color: #6f6f6f;
 }
-
-main .form .multiselect .list span:hover {
-  background-color: #f3f4f4;
+main .form .source ul li {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  margin-bottom: 15px;
 }
-
-main .form .multiselect:hover, main .form .multiselect:active {
-  border-bottom: 1px solid #b5b9bd;
+main .form .source ul li strong {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0 0 5px 0;
+  color: #555555;
 }
-
+main .form .source ul li em {
+  font-size: 14px;
+}
 main .top-nav {
   display: flex;
   flex-flow: wrap;
   padding-top: 20px;
 }
-
 main .error {
   padding: 15px;
   margin: 0;
 }
-
 main .pagination {
   display: flex;
   align-items: center;
   padding: 25px 0;
 }
-
 main .pagination a {
   display: inline-flex;
   text-decoration: none;
@@ -721,19 +660,15 @@ main .pagination a {
   border-radius: 4px;
   padding: 7px 10px;
 }
-
 main .pagination a:hover {
   background-color: #6d7c90;
 }
-
 main .pagination a:first-child {
   margin-right: 10px;
 }
-
 main .pagination a:last-child {
   margin-left: 10px;
 }
-
 main .pagination span {
   font-weight: 600;
 }
@@ -742,47 +677,90 @@ main .pagination span {
   overflow-x: auto;
   padding: 0 10px;
 }
-
 .table table {
   width: 100%;
   border-collapse: collapse;
 }
-
 .table table thead td {
   font-weight: 600;
   font-size: 14px;
   padding: 15px 0;
 }
-
 .table table thead td a {
   font-weight: inherit;
   font-size: inherit;
   color: inherit;
   text-decoration: none;
 }
-
 .table table thead td i {
   padding-left: 5px;
 }
-
 .table table thead tr {
   border-bottom: 1px solid #f0f1f2;
 }
-
 .table table tbody tr:first-child td {
   padding-top: 10px;
 }
-
 .table table tbody td {
   padding: 8px 0;
 }
-
+.table table tbody td .green, .table table tbody td .red, .table table tbody td .grey {
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 50px;
+  padding: 3px 8px;
+}
+.table table tbody td .green {
+  background-color: #4bb878;
+}
+.table table tbody td .red {
+  background-color: #b14f4f;
+}
+.table table tbody td .grey {
+  background-color: #777;
+}
+.table table tbody td.no-results {
+  text-align: center;
+  color: #9aa0a5;
+  line-height: 30px;
+}
+.table table tbody td.truncated-txt div {
+  color: #737980;
+}
+.table table tbody td.truncated-txt div span {
+  display: inline;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+.table table tbody td.truncated-txt div span.full {
+  display: none;
+}
+.table table tbody td.truncated-txt div .read-more {
+  text-decoration: none;
+  font-size: 14px;
+  color: #2762cf;
+  font-weight: 500;
+}
+.table table tbody td.truncated-txt.expanded div span.full {
+  display: inline;
+}
+.table table tbody td.truncated-txt.expanded div span.short {
+  display: none;
+}
+.table table tbody td.truncated-txt.expanded div .read-more {
+  display: none;
+}
+.table table tbody td.user span {
+  display: block;
+  color: #9aa0a5;
+  font-size: 14px;
+}
 .table table tbody .img {
   width: 40px;
   padding: 5px 0;
   padding-right: 15px;
 }
-
 .table table tbody .img span {
   display: flex;
   align-items: center;
@@ -795,49 +773,76 @@ main .pagination span {
   font-size: 14px;
   font-weight: 500;
 }
-
 .table table tbody .img img {
   border-radius: 50px;
   width: 30px;
   height: 30px;
 }
-
-.table table tbody .rrp {
-  color: #e26060;
+.table table tbody .rating {
+  display: flex;
+}
+.table table tbody .rating .star, .table table tbody .rating .star-alt {
+  font-size: 14px;
+  color: #F5A624;
+  margin-right: 3px;
+}
+.table table tbody .rating .star-alt {
+  color: #ececec;
+}
+.table table tbody .rating .rating_value {
+  display: none;
 }
 
 .login {
   background-color: #f8f9f9;
+  padding-top: 50px;
 }
-
 .login form {
   padding-top: 100px;
   display: flex;
   flex-flow: column;
-  width: 300px;
+  width: 100%;
+  max-width: 350px;
   align-self: center;
   margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0px 0px 7px 0 rgba(0, 0, 0, 0.05);
 }
-
-.login form input {
-  border: 1px solid #c3c6c9;
+.login form h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.login form input[type=password], .login form input[type=email] {
+  border: 1px solid #e3e4e6;
   padding: 10px 10px;
   margin-bottom: 15px;
+  border-radius: 4px;
 }
-
-.login form input[type="submit"] {
-  background: #606c7e;
+.login form input[type=password]::placeholder, .login form input[type=email]::placeholder {
+  color: #9aa0a5;
+}
+.login form input[type=submit] {
+  appearance: none;
+  background: #1b6fbe;
   border: 0;
+  border-radius: 4px;
   color: #FFFFFF;
   width: 100%;
   padding: 12px 0;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
+  margin-top: 5px;
 }
-
-.login form input[type="submit"]:hover {
-  background: #555f6f;
+.login form input[type=submit]:hover {
+  background: #1862a8;
+}
+.login form p {
+  margin: 0;
+  padding: 25px 0 0 0;
 }
 
 .link1, .link2 {
@@ -846,7 +851,6 @@ main .pagination span {
   border-bottom: 1px dotted;
   margin: 0 5px 0 0;
 }
-
 .link1:hover, .link2:hover {
   color: #003260;
 }
@@ -854,7 +858,6 @@ main .pagination span {
 .link2 {
   color: #ba0000;
 }
-
 .link2:hover {
   color: #600000;
 }
@@ -883,57 +886,45 @@ main .pagination span {
   border-radius: 4px;
   height: 38px;
 }
-
 .btn:hover {
   background: #4672a9;
 }
-
 .btn.green {
   background: #4ab46d;
 }
-
 .btn.green:hover {
   background: #46a966;
 }
-
 .btn.red {
   background: #b44a4a;
 }
-
 .btn.red:hover {
   background: #a94646;
 }
-
 .btn.alt {
   color: #75797e;
   border: 1px solid #d4dbde;
   box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.03);
   background: #f1f3f4;
 }
-
 .btn.alt:hover {
   background: #eef1f2;
 }
-
 .btn.disabled {
   background: #b1b3b4;
 }
-
 .btn.disabled:hover {
   background: #a9abad;
 }
-
 .btn.small {
   padding: 8px 12px;
   font-size: 12px;
 }
-
 .btn .loader,
 .btn .loader::after {
   width: 15px;
   height: 15px;
 }
-
 .btn .loader {
   margin: 0;
   border-top: 2px solid rgba(255, 255, 255, 0.4);
@@ -968,7 +959,6 @@ main .pagination span {
     transform: rotate(360deg);
   }
 }
-
 .pad-1 {
   padding: 5px;
 }
