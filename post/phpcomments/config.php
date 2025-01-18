@@ -14,7 +14,7 @@ define('db_charset','utf8');
 // List:0=No Approval Required,1=Approval Required for Guests,2=Approval Required for All Users
 define('comments_approval_level',1);
 // Authentication will require the user to login or register before they can write a comment.
-define('authentication_required',true);
+define('authentication_required',false);
 // The maximum number of nested replies.
 define('max_nested_replies',2);
 // The maximum number of characters the user can enter in the comment.
