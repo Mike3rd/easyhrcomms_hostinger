@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Graphic Design on EasyHRcomms</title>
+    <link>http://localhost:1313/categories/graphic-design/</link>
+    <description>Recent content in Graphic Design on EasyHRcomms</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>youremail@domain.com (Some Person)</managingEditor>
+    <webMaster>youremail@domain.com (Some Person)</webMaster>
+    <lastBuildDate>Mon, 02 Dec 2024 11:03:47 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/graphic-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5 Graphic Design Tips for Non-Designers</title>
+      <link>http://localhost:1313/post/december/</link>
+      <pubDate>Mon, 02 Dec 2024 11:03:47 -0500</pubDate><author>youremail@domain.com (Some Person)</author>
+      <guid>http://localhost:1313/post/december/</guid>
+      <description>&lt;p&gt;Creating visually appealing graphics doesn’t require a degree in design. Whether you’re crafting social media posts, presentations, or flyers, these simple tips can help you elevate your work and make it look professional—even if you’re not a designer.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;1-stick-to-a-simple-color-palette&#34;&gt;1. &lt;strong&gt;Stick to a Simple Color Palette&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Less is more when it comes to colors. Choose 2-3 complementary colors and use them consistently throughout your design. Tools like &lt;a href=&#34;https://coolors.co&#34;&gt;Coolors&lt;/a&gt; or Adobe Color can help you find harmonious color schemes. Avoid using too many bright or clashing colors, as they can overwhelm the viewer.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
