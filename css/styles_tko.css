@@ -1,0 +1,600 @@
+/* =================================================================== 
+ * Mike Turko Stylesheet Mturko
+ * Template Ver. 1.0.0
+ * 02-24-2025
+ * ------------------------------------------------------------------*/
+ @import url("fonts.css");
+ 
+
+ /*font-family: 'Merriweather', serif; normal, italic, bold, bold italic*/
+:root{--regular: normal;
+    --bold: bold;
+  	--light		:400;  
+	--regular   :500;
+	--semi-bold  :600;
+	--bold 		 :700;
+	--xbold 	 :800;
+	--checkout-text-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica Neue","Ubuntu",sans-serif;
+	--theme-font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+:root[data-theme="cyber"]{
+/* Base palette */
+	--base-bg: hsla(240, 40%, 8%, 1);  
+	--primary-hue: 180; /*#304904*/
+	--secondary-hue: 320; /*#ff675c*/
+	--primary: hsla(var(--primary-hue), 100%, 50%, 1);
+	--secondary: hsla(var(--secondary-hue), 100%, 50%, 1);
+	--secondary-bg: hsla(var(--secondary-hue), 100%, 68%, .5);
+	--neutral-bg: hsla(120, 8%, 97%, 1);
+	--text-dark: hsla(0, 0%, 95%, 1);
+	--heather-gray hsla(201, 19%, 76%, 1)
+	/* Derived colors */
+	--page-subheading: hsla(var(--primary-hue), 30%, 35%, 1);
+	--post-title: hsla(var(--primary-hue), 100%, 50%, 1);
+	--post-subtitle: hsla(var(--secondary-hue), 100%, 50%, 1);
+	--callout-bg: hsla(160, 30%, 35%, 0.05);
+	--border: hsla(0, 0%, 83%, 1);
+	--code-highlite: hsla(var(--primary-hue), 25%, 23%, .5);
+	--code-highlite-text: hsla(0, 0%, 100%, 1);
+	--links: hsla(var(--primary-hue), 30%, 35%, 1);
+	--links-hover: hhsla(var(--secondary-hue), 50%, 60%, 1);
+	
+	
+	
+	
+}
+
+
+ 
+ 
+:root[data-theme="earthy"]{
+/* Base palette */
+	--base-bg: hsla(40, 30%, 98%, 1);  
+	--primary-hue: 160; /*#304904*/
+	--secondary-hue: 25; /*#ff675c*/
+	--primary: hsla(var(--primary-hue), 30%, 35%, 1);
+	--secondary: hsla(var(--secondary-hue), 50%, 60%, 1);
+	--secondary-bg: hsla(var(--secondary-hue), 100%, 68%, .5);
+	--neutral-bg: hsla(120, 8%, 97%, 1);
+	--text-dark: hsla(0, 0%, 20%, 1);
+	--heather-gray hsla(201, 19%, 76%, 1)
+	
+	 /* Derived colors */
+	--page-subheading: hsla(var(--primary-hue), 30%, 35%, 1);
+	--post-title: hsla(var(--primary-hue), 30%, 35%, 1);
+	--post-subtitle: hsla(var(--secondary-hue), 50%, 60%, 1);
+	--callout-bg: hsla(160, 30%, 35%, 0.05);
+	--border: hsla(0, 0%, 83%, 1);
+	--code-highlite: hsla(var(--primary-hue), 25%, 23%, .5);
+	--code-highlite-text: hsla(0, 0%, 100%, 1);
+	--links: hsla(var(--primary-hue), 30%, 35%, 1);
+	--links-hover: hhsla(var(--secondary-hue), 50%, 60%, 1);
+  
+  
+	--contact-section-wrap: hsla(var(--primary-hue), 30%, 35%, 1);
+	--tipjar-section-wrap: hsla(var(--primary-hue), 30%, 35%, 1));
+	--donate-button-text: hsla(0, 0%, 0%, 1);
+	--donate-button-fill: hsla(52, 100%, 50%, 1);
+	--donate-button-hover: hsla(52, 100%, 50%, .8);
+	
+  /* shades */	
+  --color-black: hsla(0, 0%, 0%, 1);
+  --color-gray-19: #141415;
+  --color-gray-18: #27292a;
+  --color-gray-17: #3b3d40;
+  --color-gray-16: #4f5255;
+  --color-gray-15: #63676a;
+  --color-gray-14: #767b7f;
+  --color-gray-13: #8a9094;
+  --color-gray-12: #9ea4aa;
+  --color-gray-11: #b1b9bf;
+  --color-gray-10: #c5cdd4;
+  --color-gray-9: #cbd2d8;
+  --color-gray-8: #d1d7dd;
+  --color-gray-7: #d6dce1;
+  --color-gray-6: #dce1e5;
+  --color-gray-5: #e2e6ea;
+  --color-gray-4: #e8ebee;
+  --color-gray-3: #eef0f2;
+  --color-gray-2: #f3f5f6;
+  --color-gray-1: #f9fafb;
+  --color-white: #ffffff;	
+  
+  
+ }
+ 
+
+
+body{background:var(--base-bg);
+color: var(--text-dark);
+}
+
+.neon-button {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+}
+
+.post-subheading{}
+
+
+.navbar-custom .navbar-brand, .navbar-custom .nav li a{
+	color: var(--primary)
+}
+
+
+footer a{
+	color: var(--primary)
+}
+
+/* blog title and subtitle*/
+.post-preview a:focus,
+.post-preview a:hover {
+  text-decoration: none;
+  color: var(--secondary)
+}
+
+.post-title{
+  color: var(--post-title);
+}
+
+.post-preview .post-subtitle{
+  color: var(--post-subtitle);
+  font-weight: 500
+}
+
+.post-title:hover{
+  color: var(--secondary)!important;
+}
+.post-read-more{color:var(--primary);}
+
+
+/* blog tags*/
+.blog-tags a {color:#008AFF}
+ 
+.page-heading {color:var(--primary);}
+.page-subheading {color:var(--page-subheading);font-weight:700!important}
+.well h2{color:#404040;}
+.well {background-color:#f5f5f5}
+
+/* blog post page*/
+
+.blog-post h2{
+  color: var(--post-title);
+	
+}
+
+
+.container-top {
+  --offset: 100px;
+  --fade: 80px;
+  
+  display: flex;
+  align-items: flex-end;
+  width: 60px;
+  justify-self: end;
+  justify-content: flex-end;
+  -webkit-mask:linear-gradient(#0000 calc(100vh + var(--offset)),#000 calc(100vh + var(--offset) + var(--fade)));
+}
+
+.top {
+  position: sticky;
+  bottom: 20px;      
+  margin-right:10px; 
+  
+  /* visual styling */
+  width:100%;
+  aspect-ratio:1;
+  background:var(--callout-bg);
+  border-radius:10px;
+}
+.top:before {
+  content:"";
+  position:absolute;
+  inset:30%;
+  transform:translateY(20%) rotate(-45deg);
+  border-top:5px solid #fff;
+  border-right:5px solid #fff;
+}
+
+.well{
+	background-color:var(--neutral-bg);
+	font-family: var(--theme-font-family)
+	
+}
+
+
+/*hugo markup hilight text*/
+code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: var(--code-highlite-text);
+    background-color:var(--code-highlite); 
+    border-radius: 4px;
+}
+
+/*commentstko*/
+.commentwraptko {
+margin-top:10px;
+font-family:  var(--checkout-text-font-family);
+	
+}
+
+ 
+ /* SIGNUP FORM */
+
+ 
+.container_form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-top:25px
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type=email], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+#subForm label{
+  font-family:  var(--checkout-text-font-family);
+  font-weight: normal
+}
+
+#cm-privacy-consent{
+ width:auto;
+  
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;}
+  
+.iagree_text{font-size:15px; display:inline}
+ 
+button[type=submit] {
+  background-color: var(--primary);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family:  var(--checkout-text-font-family);
+} 
+ 
+ 
+ 
+ button[type=submit]:hover {
+  background-color: #45a049;
+}
+ 
+ /* END SIGNUP FORM */ 
+
+/* TKO TIP JAR AREA */
+* {
+  box-sizing: border-box;
+}
+
+/* Container for flexboxes */
+.tipjar_row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom:10px;
+  margin-top:25px;
+  background-color:var(--primary);
+}
+
+/* Create four equal columns */
+
+.tipjar_row p{
+color: var(--color-white);
+font-family: var(--theme-font-family);	
+}
+
+
+.tipjar_column {
+  flex: 25%;
+  padding: 20px;
+}
+
+.contact_column {
+  flex: 25%;
+  padding: 20px;
+  border-right:3px solid white;
+ 
+}
+
+
+
+.contact_title, .tipjar_title{
+  color: var(--color-white);
+
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .tipjar_column {
+    flex: 50%;
+  }
+  .contact_column {
+    flex: 50%;
+
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .tipjar_row {
+    flex-direction: column;
+  }
+  
+    .contact_column{
+   
+	  border-right:none;
+	  border-bottom:3px solid white;
+  }
+  
+  
+}
+
+
+/* PAYPAL BUTTON */
+
+
+#donate_paypal_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:5px
+}
+
+#donate_paypal{
+  background-color:white;
+    padding:10px;
+  border-radius:5px;
+}
+
+
+
+ a.button_paypal:link,  a.button_paypal:visited {
+  background-color: var(--donate-button-fill);
+  color: var(--donate-button-text);
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width:265px;
+  border-radius:5px;
+  font-family:  var(--checkout-text-font-family);
+  font-weight: 500;
+  font-size: 15px
+}
+
+a.button_paypal:hover, a.button_paypal:active {
+  background-color: var(--donate-button-hover);
+}
+
+.fa {
+	
+	color:var(--primary);
+	font-size:21px;
+}
+
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 17.5px;
+    border-left: 5px solid var(--secondary);
+	background-color:var(--callout-bg);
+	
+}
+
+.post-read-more {
+color: var(--primary)
+}
+
+.post-preview a{
+color: var(--primary)
+}
+
+hr.small{
+border-color: var(--secondary)
+
+}
+
+.share_post{
+font-family:var(--theme-font-family);
+color:var(--heather-gray);
+font-size:17px
+}
+.share-box{
+margin-top:2px;
+text-shadow:none
+}
+
+
+
+/* FIND YOUR TIME*/
+
+		.error-message {
+            color: #dc3545;
+            font-size: 0.9em;
+            margin-top: 4px;
+            display: block;
+        }
+        .invalid-time {
+            color: #dc3545 !important;
+        }
+		
+        .container2 {
+            max-width: 100%;
+            margin: 0px auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .input-group2 {
+            margin: 15px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 5px;
+        }
+        .event-time {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        #result {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
+/*END FIND YOUR TIME*/
+
+
+/*ALERT CIRCLE CHECK SHORTCODE*/
+.alert {
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+
+}
+
+.alert-content {
+  font-family:  var(--checkout-text-font-family);
+  font-weight: var(--semi-bold)
+}
+
+.alert-circle-check {
+  background: var(--neutral-bg);
+  border: 1px solid var(--primary);
+}
+
+.alert-warning {
+  background: #fff3e0;
+  border: 1px solid #ffcc80;
+}
+
+.alert-icon {
+  font-size: 1.2em;
+}
+
+.alert-circle-check .alert-icon {
+  color: var(--primary);
+}
+
+.alert-warning .alert-icon {
+  color: #ef6c00;
+}
+/*END SHORTCODE*/
+
+
+
+/* SOCIAL SHARE TKO*/
+.posts-list .share-container {
+	display: none
+}
+
+
+.share-container {
+  position: relative;
+  display: inline-block;
+  text-shadow:none
+}
+
+.share-button {
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 3px var(--primary);
+}
+
+.share-button:hover {
+  background: #f5f5f5;
+  transform: rotate(360deg);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: white;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 10px 0;
+  margin-top: 10px;
+  z-index: 1;
+}
+
+.dropdown-content.show {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+.dropdown-item {
+  padding: 12px 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+#dropdownContent .dropdown-item:hover {
+  background: #f8f9fa;
+  transform: translateX(5px);
+}
+
+.dropdown-item i {
+  width: 25px;
+  margin-right: 15px;
+}
+
+/* Platform-specific colors */
+#dropdownContent .linkedin { color: #0A66C2}
+#dropdownContent .facebook { color: #1877F2; }
+#dropdownContent .bluesky { color: #1185F0; }
+#dropdownContent .email { color: #EA4335; }
+#dropdownContent .copy-link { color: #6c757d; }
+#dropdownContent .twitter { color: #000000; }
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
