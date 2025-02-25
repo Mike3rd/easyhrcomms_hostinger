@@ -279,7 +279,7 @@ button[type=submit] {
 } 
 
  button[type=submit]:hover {
-  background-color: var(--links-hover);
+  background-color: var(--secondary);
 }
  label .sc-dnqmqq{color: var(--secondary); } 
  /* END SIGNUP FORM */ 
