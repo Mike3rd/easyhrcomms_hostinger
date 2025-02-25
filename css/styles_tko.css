@@ -27,7 +27,7 @@
 	--secondary: hsla(var(--secondary-hue), 100%, 50%, 1);
 	--secondary-bg: hsla(var(--secondary-hue), 100%, 68%, .5);
 	--neutral-bg: hsla(120, 8%, 97%, 1);
-	--text-dark: hsla(0, 0%, 95%, 1);
+	--text: hsla(0, 0%, 95%, 1);
 	--heather-gray hsla(201, 19%, 76%, 1)
 	/* Derived colors */
 	--page-subheading: hsla(var(--primary-hue), 30%, 35%, 1);
@@ -57,7 +57,7 @@
 	--secondary: hsla(var(--secondary-hue), 50%, 60%, 1);
 	--secondary-bg: hsla(var(--secondary-hue), 100%, 68%, .5);
 	--neutral-bg: hsla(120, 8%, 97%, 1);
-	--text-dark: hsla(0, 0%, 20%, 1);
+	--text: hsla(0, 0%, 20%, 1);
 	--heather-gray hsla(201, 19%, 76%, 1)
 	
 	 /* Derived colors */
@@ -107,7 +107,7 @@
 
 
 body{background:var(--base-bg);
-color: var(--text-dark);
+color: var(--text);
 }
 
 .neon-button {
