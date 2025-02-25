@@ -277,13 +277,11 @@ button[type=submit] {
   cursor: pointer;
   font-family:  var(--checkout-text-font-family);
 } 
- 
- 
- 
+
  button[type=submit]:hover {
-  background-color: #45a049;
+  background-color: var(--links-hover);
 }
- 
+ label .sc-dnqmqq{color: var(--secondary); } 
  /* END SIGNUP FORM */ 
 
 /* TKO TIP JAR AREA */
