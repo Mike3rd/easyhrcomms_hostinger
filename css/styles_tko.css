@@ -146,8 +146,8 @@ blockquote {
   background: linear-gradient(45deg, var(--primary), var(--secondary));
 }
 
-.post-heading h1{color: var(--primary)}
-.post-subheading {color: var(--secondary)}
+.no-img h1{color: var(--primary)}
+.no-img h2{color: var(--secondary)}
 
 .navbar-custom .navbar-brand, .navbar-custom .nav li a{
 	color: var(--primary)
