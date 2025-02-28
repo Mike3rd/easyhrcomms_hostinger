@@ -81,7 +81,8 @@
 	--secondary-bg: hsla(var(--secondary-hue), 100%, 68%, .5);
 	--neutral-bg: hsla(120, 8%, 97%, 1);
 	--text: hsla(0, 0%, 20%, 1);
-	--heather-gray hsla(201, 19%, 76%, 1)
+	--text-well: hsla(0, 0%, 95%, 1);
+	--heather-gray hsla(201, 19%, 76%, 1);
 	
 	 /* Derived colors */
 	--page-subheading: hsla(var(--primary-hue), 30%, 35%, 1);
@@ -91,8 +92,8 @@
 	--border: hsla(0, 0%, 83%, 1);
 	--code-highlite: hsla(var(--primary-hue), 25%, 23%, .5);
 	--code-highlite-text: hsla(0, 0%, 100%, 1);
-	--links: hsla(var(--primary-hue), 30%, 35%, 1);
-	--links-hover: hhsla(var(--secondary-hue), 50%, 60%, 1);
+	--links: hsla(var(--primary-hue), 30%, 35%, .8);
+	--links-hover: hsla(var(--secondary-hue), 50%, 60%, 1);	
   
   
 	--contact-section-wrap: hsla(var(--primary-hue), 30%, 35%, 1);
@@ -102,7 +103,8 @@
 	--donate-button-hover: hsla(52, 100%, 50%, .8);
 	
   /* shades */	
-  --color-black: hsla(0, 0%, 0%, 1);
+  --color-black: hsla(0, 0%, 0%, 0);
+  --color-white: hsla(0, 0%, 0%, .5);
   --color-gray-19: #141415;
   --color-gray-18: #27292a;
   --color-gray-17: #3b3d40;
@@ -146,6 +148,23 @@ blockquote {
   background: linear-gradient(45deg, var(--primary), var(--secondary));
 }
 
+p a {color: var(--links)}
+
+a:hover,
+a:focus {
+  color: var(--links-hover)!important;
+}
+
+.well{
+	background-color: var(--primary);
+	font-family: var(--theme-font-family);
+	color: var(--text-well);	
+}
+
+.well a{
+color: var(--color-gray-10)
+}
+
 
 /*Post title and subtitle theme color and white with big image*/
 .no-img h1{color: var(--primary)}
@@ -187,8 +206,7 @@ footer a{
  
 .page-heading {color:var(--primary);}
 .page-subheading {color:var(--page-subheading);font-weight:700!important}
-.well h2{color:#404040;}
-.well {background-color:#f5f5f5}
+
 
 /* blog post page*/
 
@@ -230,11 +248,7 @@ footer a{
   border-right:5px solid #fff;
 }
 
-.well{
-	background-color:var(--neutral-bg);
-	font-family: var(--theme-font-family)
-	
-}
+
 
 
 /*hugo markup hilight text*/
