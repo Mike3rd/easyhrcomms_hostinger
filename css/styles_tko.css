@@ -146,6 +146,8 @@ blockquote {
   background: linear-gradient(45deg, var(--primary), var(--secondary));
 }
 
+
+/*Post title and subtitle theme color and white with big image*/
 .no-img h1{color: var(--primary)}
 .no-img h2{color: var(--secondary)}
 
