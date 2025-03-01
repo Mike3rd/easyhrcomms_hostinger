@@ -155,6 +155,16 @@ a:focus {
   color: var(--links-hover)!important;
 }
 
+/* Previous Next post buttons*/
+.pager li a:hover,
+.pager li a:focus {
+  color: #FFF;
+  background: var(--primary);
+  border: 1px solid #0085a1;
+}
+
+
+
 .well{
 	background-color: var(--primary);
 	font-family: var(--theme-font-family);
