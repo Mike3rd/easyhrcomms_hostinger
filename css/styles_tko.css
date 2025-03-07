@@ -23,6 +23,8 @@
  * # FOOTER
  *      ## copyright
  *      ## go top
+ * # TABLES
+ * 		## fix table on mobile
  * ------------------------------------------------------------------*/
  
  
@@ -676,3 +678,11 @@ text-shadow:none
 }
 
 /* END Social Share end of post*/
+
+/* Table on mobile fix*/
+@media screen and (max-width: 992px) {
+table{ 
+    display: block;
+    width: 100%;
+    overflow-x: auto;}	
+}
